@@ -62,11 +62,23 @@ a.remove(2)
 print(a)
 
 # find pos of element
-s.index(x, start, stop)
+#s.index('data', start, stop)
 a = [1,2,3,4]
 print(a.index(1))
 
 # append only add the element right after the most recent or the last element you already have,
 # to make it even more efficiently, we use "insert" which will help to add the element to arbitrary position
+
+#s.insert(pos, 'data')
+
+#a = [1,2,3,4]
+#a.insert(1, 'two')
+#print(a)
+#
+# simulate append by insert
+a = [1,2,3,4]
+a.insert(len(a), 'ttwo')
+print(a)
+
 
 
