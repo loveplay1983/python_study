@@ -105,6 +105,7 @@ print('a = {a}, b = {b}'.format(**locals())) # it actually input the a=10 and b=
 # add the "{expression}" right after, insted of using .format(**)
 
 a = 10
-print(f'this is a : {a}')  # it won't work since we have python3.5 locally in the testing env
+print(f'this is a : {a}')
+# it won't work since we have python3.5 locally in the testing env
 
 
