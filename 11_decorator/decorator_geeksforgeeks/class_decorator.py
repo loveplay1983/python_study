@@ -93,7 +93,7 @@ def add_nums(*nums):
     return sum(nums)
 
 print(add_nums(1,2,3))
-print(add_numinheritances('1',2,3))
+print(add_nums('1',2,3))
 
 
 
