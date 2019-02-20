@@ -58,4 +58,27 @@ say('class decorator with parameters')
 
 # Built-in decorator
 # Built-in decorator returns class object instead of function
+"""
+def getx(self):
+    return self._x
 
+def setx(self, value):
+    self._x = value
+
+def delx(self):
+    del self._x
+
+# create a property
+x = property(getx, setx, delx, "I am doc for x property")
+
+"""
+# Similar to Java, we can use decoator with @ symbol and make it much easier
+"""
+@property
+def x(self): ...
+
+# 等同于
+
+def x(self): ...
+x = property(x)
+"""
