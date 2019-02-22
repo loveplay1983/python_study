@@ -114,5 +114,3 @@ def foo(x):
 foo('Hello world')
 
 
-# Using wraps from functools
-
