@@ -50,7 +50,7 @@ if False:
         print(line, type(line))
 
 
-# Read the complete content of the fle which includes the carriage returns and line feeds
+# Read the complete content of the file which includes the carriage returns and line feeds
 if False:
     read_f = open('test2.file').read()
     print(type(read_f))
