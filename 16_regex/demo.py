@@ -60,6 +60,74 @@ Answer The character "-" and all the characters "a", "b", "c" all the way up to 
 
 #############################################################################################################
 # A practical exercise
+if False:
+    print('A practical exercise')
+    import re
+    phone_book = open('phone.book')
+    for line in phone_book:
+        if re.search(r'J.*Neu*', line):
+            print(line.rstrip())
+    phone_book.close()
+
+# It is also possible to use url directly instead of the local text file
+import re
+
+#from urllib.request import urlopen
+#with urlopen('https://www.python-course.eu/simpsons_phone_book.txt') as phone_book:
+#    for line in phone_book:
+#        # line is a byte string so it needs to be transormed as utf-8
+#        # [why line is a byte string??? Because they were transmitted through network which uses binary or byte data format]
+#        line = line.decode('UTF-8').rstrip()
+#        if re.search(r'J.*Neu*', line):
+#            print(line)
+# encoding example
+#print(b'\xcf\x84o\xcf\x81\xce\xbdo\xcf\x82'.decode('utf-16'))
+#print('τoρνoς'.encode('utf-8'))
+
+# Predefined character classes
+"""
+\d any decimal digit [0-9]
+\D complement of \d, i.e. the opposite data set of \d
+\s any whitespace character [\t\n\r\f\v]
+\S complement of \s
+\w any alphanumeric character [0-9A-Za-z_]
+\W complement of \w
+\b empty strings, only at the start or end of a word
+\B empty strings, but not at the start or end of a word
+\\ matches a literal backslash
+"""
+
+# Matching beginning and end    -  `^` and `$`
+import re
+s1 = 'Mayer is a very common Name'
+s2 = 'He is called Meyer but he is not German'
+
+print(re.search(r'^M[ae][iy]er',s1))
+print(re.search(r'^M[ae][iy]er',s2))
+
+s = s2 + '\n' + s1
+print(s)
+print(re.search(r'^M[ae][iy]er',s))  # None - since `Mayer` wasn't positioned right at the beginning of the whole string.
+
+# By adding the `re.MULTILINE` argument, the result will be redefined as to search the multiple lines instead of oneline
+print(re.search(r'^M[ae][iy]er', s, re.MULTILINE))
+print(re.search(r'^M[ae][iy]er', s, re.M))
+print(re.match(r'^M[ae][iy]er', s, re.M))   # match method doesn't show the success of matching since match() only checks for beginning
+
+# The ending pattern is similar to beginning pattern by using `$` dollar sign
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
