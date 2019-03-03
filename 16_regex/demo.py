@@ -116,6 +116,45 @@ print(re.match(r'^M[ae][iy]er', s, re.M))   # match method doesn't show the succ
 
 # The ending pattern is similar to beginning pattern by using `$` dollar sign
 
+# Optional items
+# Sometimes it is easy to miss the correct result, therefore we need to add tiny extra option to make the filter more precisely
+# ? symbol
+"""
+r'M[ae][iy]e?r'
+"""
+# A subexpression which is grouped by round brackets and question mark following such a group means this group is optional
+"""
+r'Feb(ruary)? 2019'
+"""
+# Quantifier - when dealing with repetable content
+"""
+r'[0-9]*'   the asterisk. A star following a character or a subexpression group means that this expression or character may be repeated arbitrarily, even zero times.
+
+r'^[0-9]+ '  The plus operator is very similar to the star operator, except that the character or subexpression followed by a "+" sign has to be repeated at least one time
+
+
+r'^[0-9]{4,5}  [A-Z][]a-z]{2,}' {from, to}: this means that the expression has to appear at least "from" times and not more than "to" times. {, to} is an abbreviated spelling for {0,to} and {from,} is an abbreviation for "at least from times but no upper limit"
+
+"""
+
+
+# Grouping, capturing groups and back references
+# Grouping
+"""
+We can group a part of a regular expression by surrounding it with parenthesis (round brackets). This way we can apply operators to the complete group instead of a single character.
+
+r'Feb(ruary)? 2019'
+"""
+
+
+# Capturing Groups and back references
+"""
+Parenthesis (round brackets, braces) not only group subexpressions but they create back references as well. The part of the string matched by the grouped part of the regular expression, i.e. the subexpression in parenthesis, is stored in a back reference. With the aid of back references we can reuse parts of regular expressions. These stored values can be both reused inside the expression itself and afterwards, when the regexpr will have been executed.
+"""
+
+
+# Match objects
+
 
 
 
