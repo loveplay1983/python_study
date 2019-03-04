@@ -154,6 +154,31 @@ Parenthesis (round brackets, braces) not only group subexpressions but they crea
 
 
 # Match objects
+import re
+mo = re.search('[0-9]+', 'Customer number: 232454, Date: February 12, 2011')
+print(mo.group(), mo.span(), mo.start(), mo.end(), mo.span()[0], mo.span()[1])
+# start, end are actually the same as span[0] and span[1] since span just means a tuple of object which stands for the start and end
+# group method allow us to make parentheses out of the certain location, i.e. matching different pattern
+mo = re.search("([0-9]+).*: (.*)", "Customer number: 232454, Date: February 12, 2011")
+print(mo.group())
+print(mo.group(1))
+print(mo.group(1, 2))   # return a tuple
+
+
+# Example of XML or HTML tags filter
+import re
+fh = open('tags.txt')
+for i in fh:
+    res = re.search(r'<([a-z]+)>(.*)</\1>', i)
+    print(res.group(1) + ': ' + res.group(2))
+
+"""
+If there are more than one pair of parenthesis (round brackets) inside the expression, the backreferences are numbered \1, \2, \3, in the order of the pairs of parenthesis.
+"""
+
+
+
+
 
 
 
