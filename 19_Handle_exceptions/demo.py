@@ -70,12 +70,66 @@ except ValueError as e:
 
 
 # Custom-made exception
-raise SyntaxError('Oh it was my fault!')                # Use of built in exception name
+#raise SyntaxError('Oh it was my fault!')                # Use of built in exception name
+#
+## Inherited from Exception class
+#class MyExcept(Exception):                              # Use of custom exception name definition
+#    pass
+#
+#raise MyExcept('An exception has occured and the message is shown in the way of customized.')
+#
+#
+# Clean up actions
+# try... except and finally
+# Finally block will be trigger if neither try nor except was catched
+try:
+    x = float(input('Your num: '))
+    inverse = 1.0/x
+except ValueError:
+    print('You should have given either int or float')
+except ZeroDivisionError:
+    print('Infinity')
+finally:
+    print('There may or may not have been an exception')
 
-class MyExcept(Exception):                              # Use of custom exception name definition
-    pass
+"""
+The try ... except statement has an optional else clause. An else block has to be positioned after all the except clauses. An else clause will be executed if the try clause doesn't raise an exception.
+"""
 
-raise MyExcept('An exception has occured and the message is shown in the way of customized.')
+import sys
+fn = sys.argv[1]
+text = []
+try:
+    fh = open(fn, 'r')
+    text = fh.readlines()
+    fh.close()
+except IOError:
+    print('File cannot be opened.')
+
+if text:
+    print(text[100])
+
+# You need to run the above script as following
+# python *.py *.txt
+
+# There is another way to achieve the same result
+import sys
+fn = sys.argv[1]
+text = []
+try:
+    fh = open(fn, 'r')
+except IOError:
+    print('File cannot be opened.')
+else:
+    text = fh.readlines()
+    fh.close()
+
+if text:
+    print(text[100])
+
+
+
+
 
 
 
