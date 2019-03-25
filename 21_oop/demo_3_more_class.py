@@ -42,7 +42,7 @@ class Robot:
     def set_name(self, name):
         self.__name = name
 
-    def get_name(self, name):
+    def get_name(self):
         return self.__name
 
     def set_build_year(self, by):
@@ -57,10 +57,48 @@ class Robot:
     def __str__(self):
         return "Name: " + self.__name + ", Build Year: " + str(self.__build_year) 
 
+    # The class instance can be destroied once there is no longer any reference to this instance, 
+    # in that way we often take on "__del__" method
+    def __del__(self):
+        print('Goodbye, ' + type(self).__name__ + ' is leaving, see you next time')
+
+# Setter and getter 
+"""
+class A():
+
+    def __init__(self, x, y):
+        self.__x = x
+        self.__y = y
+
+    def GetX(self):
+        return self.__x
+
+    def GetY(self):
+        return self.__y
+
+    def SetX(self, x):
+        self.__x = x
+
+    def SetY(self, y):
+        self.__y = y
+
+"""
 
 if __name__ == "__main__":
-    x
+    
+    # Initialize x, y 
+    x = Robot('John', 2019)
+    y = Robot('Marvin', 1998)
 
+    for each in [x, y]:
+        each.say_hi()
+        if each.get_name() == 'Marvin':
+            each.set_build_year(1993)
+        print('I was built in the year ' + str(each.get_build_year()) + '!')
+
+
+    del x
+    del y
 
 
 

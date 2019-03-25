@@ -86,10 +86,10 @@ class RobotD:
         pass
 
     def __str__(self):
-        return "hi, this is " + type(self).__name__ + "with str()"
+        return "hi, this is " + type(self).__name__ + " with str()"
 
     def __repr__(self):
-        return "Hi, this is " + type(self).__name__ + "with repr()"
+        return "Hi, this is " + type(self).__name__ + " with repr()"
 
 robot_d = RobotD()
 print(robot_d)                             # The modified output of class RobotD
