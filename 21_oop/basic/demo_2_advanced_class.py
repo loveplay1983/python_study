@@ -98,7 +98,7 @@ print(str(robot_d))                        # It looks like the print() method ca
 print(repr(robot_d))                       # Print out the robot_d str info by repr() method
 
 # __str__ vs __repr__
-# __str__                                  # If the output for end useror or in other words, it should be nicely printed.
+# __str__                                  # If the output for end user or in other words, it should be nicely printed.
 # __repr__                                 # __repr is used for internal representation of an object or in other words a string 
                                            # which can be parsed by python interpreter. The result of this parsing is in an equal object.
 
@@ -183,6 +183,7 @@ SyntaxError: invalid syntax
 
 ####################### conclusion of __str__ and __repr__ #####################
 # __str__   - For final representation, normally it is just for ordinary output
-# __repr__  - For internal representation, normally it will be used to enjoy the intermediate python code
-
-
+# __repr__  - For internal representation, normally it will be used to join the intermediate python code
+# You cannot use eval(str(obj)) instead, you need to replace str(obj) by repr(obj), in other words, you need to complete the __repr__ magic method
+# If you want to use eval() method for it to which str(obj) shall complain.
+ 
