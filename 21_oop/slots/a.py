@@ -32,10 +32,10 @@ class S:
 
         self.val = v
 
+if __name__ == '__main__':
+    x = S(10)
+    print(x.val)
 
-x = S(10)
-print(x.val)
-
-x.new = 'hello world'
+    x.new = 'hello world'
 
 
