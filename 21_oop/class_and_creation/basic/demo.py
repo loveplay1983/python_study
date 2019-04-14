@@ -17,6 +17,10 @@ print(type(x))
 """
 When we call "type", the call method of type is called. The call method runs two other methods: new and init
 
+__new__ accepts a type as the first argument, and (usually) returns a new instance of that type. Thus it is suitable for use with both mutable and immutable types.
+
+__init__ accepts an instance as the first argument and modifies the attributes of that instance. This is inappropriate for an immutable type, as it would allow them to be modified after creation by calling obj.__init__(*args).
+
 
 type.__new__(typeclass, classname, superclasses, attributedict)
 type.__init__(cls, classname, superclasses, attributedict)
@@ -45,8 +49,8 @@ def rob_init(self, name):
     self.name = name
 
 Robot2 = type('Robot2',                   # class name
-             (),                         # superclass
-             { 'counter': 0,             # attributes
+             (),                          # superclass
+             { 'counter': 0,              # attributes
                '__init__': rob_init,
                'say_hello': lambda self: "Hi, this is " + self.name})
 
